@@ -1,0 +1,35 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from statsmodels.tsa.arima.model import ARIMA
+
+# Generate random data for capacity planning
+np.random.seed(1234)
+data = pd.DataFrame(np.random.randint(100, 500, size=(60,1)), columns=["capacity"])
+data.index = pd.date_range(start="2022-01-01", periods=len(data), freq="d")
+
+# Split data into training and testing sets
+train_data = data.iloc[:-12] # Use first 80% of data for training
+test_data = data.iloc[-12:] # Use last 20% of data for testing
+
+# Build ARIMA model
+model = ARIMA(train_data, order=(1,1,1))
+fitted_model = model.fit()
+
+# Make predictions for future periods
+forecast_data = fitted_model.forecast(steps=12)
+
+# Get rolling mean of forecast values over a window of 3
+smoothed_forecast = forecast_data.rolling(window=3).mean()
+
+# Plot training and test data, and model predictions
+plt.figure(figsize=(12,6))
+plt.plot(train_data.index, train_data.values, label="Training Data")
+plt.plot(test_data.index, test_data.values, label="Test Data")
+plt.plot(forecast_data.index, forecast_data.values, label="Forecast")
+plt.plot(smoothed_forecast.index, smoothed_forecast.values, label="Smoothed Forecast")
+plt.legend()
+plt.title("ARIMA Time Series Model for Capacity Planning")
+plt.xlabel("Date")
+plt.ylabel("Capacity")
+plt.show()
