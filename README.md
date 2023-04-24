@@ -6,7 +6,7 @@
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap this project. 
+This section should list any major frameworks/libraries used to model this project. 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
