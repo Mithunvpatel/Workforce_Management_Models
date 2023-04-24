@@ -17,3 +17,9 @@ This section should list any major frameworks/libraries used to model this proje
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Math utilization
+* Import math
+* Erlang C 
+* Regression
+* Holt-winters
