@@ -2,7 +2,14 @@
 ### custom models for WFM practise
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Scope of **Work**
+* build models in python that assist with future automation
+* create the key ingredients to success
+* Experiment for outcomes with varying variables
+
+## Future Scope of **Work**
+* build simple applications that a user can input and manipulate
+* simplify and tighten code base
 
 ### Built With
 
