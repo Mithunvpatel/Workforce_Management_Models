@@ -6,10 +6,12 @@
 * build models in python that assist with future automation
 * create the key ingredients to success
 * Experiment for outcomes with varying variables
+*simulate various outcomes
 
 ## Future Scope of **Work**
 * build simple applications that a user can input and manipulate
 * simplify and tighten code base
+*introduce & validate forecast model into dictionary lists
 
 ### Built With
 
