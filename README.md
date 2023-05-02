@@ -3,6 +3,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## Scope of **Work**
+* process of currating
 * build models in python that assist with future automation
 * create the key ingredients to success
 * Experiment for outcomes with varying variables
