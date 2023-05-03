@@ -1,5 +1,8 @@
-## Subject Expertise ##
-
+## Subject Expertise(MithunP_WFMimplementation.PDF) ##
+*sample work - Workforce Management Implementation Project Plan and Scoping
+![Step 1](Images/MithunP_WFMimplementation.001.png)
+*sample work - Workforce Management: Swimlane diagram of future state of an excel based innovation
+![Step 2](Images/MithunP_WFMimplementation.010.png)
 
 <!-- ABOUT THE PROJECT -->
 ## Scope of **Work**
