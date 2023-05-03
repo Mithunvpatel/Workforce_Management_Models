@@ -1,6 +1,6 @@
 ## Subject Expertise ##
 
-![Step 1](Images/MithunP_WFMimplementation.PNG)
+![Step 1](Images/MithunP_WFMimplementation.001.png)
 
 <!-- ABOUT THE PROJECT -->
 ## Scope of **Work**
