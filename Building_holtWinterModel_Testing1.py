@@ -5,27 +5,26 @@ from statsmodels.tsa.holtwinters import ExponentialSmoothing
 
 # Generate random data for capacity planning
 np.random.seed(1234)
-data = pd.DataFrame(np.random.randint(100, 500, size=(60,1)), columns=["capacity"])
-data.index = pd.date_range(start="2022-01-01", periods=len(data), freq="M")
+dates = pd.date_range(start="2022-01-01", periods=60, freq="M")
+capacity = np.random.randint(100, 500, size=60)
+data = pd.DataFrame({"capacity": capacity}, index=dates)
 
 # Split data into training and testing sets
-train_data = data.iloc[:-12] # Use first 80% of data for training
-test_data = data.iloc[-12:] # Use last 20% of data for testing
+train_data, test_data = data.iloc[:-12], data.iloc[-12:]
 
 # Build Holt-Winters model
-model = ExponentialSmoothing(train_data, seasonal_periods=12, trend='add', seasonal='add')
-fitted_model = model.fit()
+model = ExponentialSmoothing(train_data, seasonal_periods=12, trend='add', seasonal='add').fit()
 
 # Make predictions for future periods
-forecast_data = fitted_model.forecast(12)
+forecast_data = model.forecast(12)
 
 # Plot training and test data, and model predictions
-plt.figure(figsize=(12,6))
-plt.plot(train_data.index, train_data.values, label="Training Data")
-plt.plot(test_data.index, test_data.values, label="Test Data")
-plt.plot(forecast_data.index, forecast_data.values, label="Forecast")
-plt.legend()
-plt.title("Holt-Winters Time Series Model for Capacity Planning")
-plt.xlabel("Date")
-plt.ylabel("Capacity")
+fig, ax = plt.subplots(figsize=(12,6))
+ax.plot(train_data, label="Training Data")
+ax.plot(test_data, label="Test Data")
+ax.plot(forecast_data, label="Forecast")
+ax.legend()
+ax.set_title("Holt-Winters Time Series Model for Capacity Planning")
+ax.set_xlabel("Date")
+ax.set_ylabel("Capacity")
 plt.show()

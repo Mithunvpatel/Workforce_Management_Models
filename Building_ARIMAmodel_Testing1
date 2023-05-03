@@ -5,8 +5,9 @@ from statsmodels.tsa.arima.model import ARIMA
 
 # Generate random data for capacity planning
 np.random.seed(1234)
-data = pd.DataFrame(np.random.randint(100, 500, size=(60,1)), columns=["capacity"])
-data.index = pd.date_range(start="2022-01-01", periods=len(data), freq="d")
+dates = pd.date_range(start="2022-01-01", periods=60, freq="d")
+capacity = np.random.randint(100, 500, size=60)
+data = pd.DataFrame({"capacity": capacity}, index=dates)
 
 # Split data into training and testing sets
 train_data = data.iloc[:-12] # Use first 80% of data for training
@@ -23,13 +24,13 @@ forecast_data = fitted_model.forecast(steps=12)
 smoothed_forecast = forecast_data.rolling(window=3).mean()
 
 # Plot training and test data, and model predictions
-plt.figure(figsize=(12,6))
-plt.plot(train_data.index, train_data.values, label="Training Data")
-plt.plot(test_data.index, test_data.values, label="Test Data")
-plt.plot(forecast_data.index, forecast_data.values, label="Forecast")
-plt.plot(smoothed_forecast.index, smoothed_forecast.values, label="Smoothed Forecast")
-plt.legend()
-plt.title("ARIMA Time Series Model for Capacity Planning")
-plt.xlabel("Date")
-plt.ylabel("Capacity")
+fig, ax = plt.subplots(figsize=(12,6))
+ax.plot(train_data, label="Training Data")
+ax.plot(test_data, label="Test Data")
+ax.plot(forecast_data, label="Forecast")
+ax.plot(smoothed_forecast, label="Smoothed Forecast")
+ax.legend()
+ax.set_title("ARIMA Time Series Model for Capacity Planning")
+ax.set_xlabel("Date")
+ax.set_ylabel("Capacity")
 plt.show()
