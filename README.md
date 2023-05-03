@@ -3,6 +3,10 @@
 ![Step 1](Images/MithunP_WFMimplementation.001.png)
 *sample work - Workforce Management: Swimlane diagram of future state of an excel based innovation
 ![Step 2](Images/MithunP_WFMimplementation.010.png)
+*sample work - Workforce Management: value diagram of process savings
+![Step 3](Images/MithunP_WFMimplementation.011.png)
+*sample work - Workforce Management: service-oriented architecture
+![Step 4](Images/MithunP_WFMimplementation.019.png)
 
 <!-- ABOUT THE PROJECT -->
 ## Scope of **Work**
