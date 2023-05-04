@@ -7,6 +7,10 @@
 ![Step 3](Images/MithunP_WFMimplementation.011.png)
 *sample work - Workforce Management: service-oriented architecture
 ![Step 4](Images/MithunP_WFMimplementation.019.png)
+*sample work - UML diagram: process evaluation
+![Step 4](Images/UMLdiagram_example.png)
+
+
 
 <!-- ABOUT THE PROJECT -->
 ## Scope of **Work**
