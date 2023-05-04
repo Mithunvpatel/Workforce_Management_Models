@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
 
+#attach an actual dataset to validate process
+
 # Generate random data for capacity planning
 np.random.seed(1234)
 dates = pd.date_range(start="2022-01-01", periods=60, freq="M")
@@ -12,6 +14,7 @@ data = pd.DataFrame({"capacity": capacity}, index=dates)
 # Split data into training and testing sets
 train_data, test_data = data.iloc[:-12], data.iloc[-12:]
 
+# Attach comparable model
 # Build Holt-Winters model
 model = ExponentialSmoothing(train_data, seasonal_periods=12, trend='add', seasonal='add').fit()
 

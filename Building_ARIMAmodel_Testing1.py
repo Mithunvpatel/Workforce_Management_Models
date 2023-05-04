@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from statsmodels.tsa.arima.model import ARIMA
 
+##attach actual dataset to validate process
+
 # Generate random data for capacity planning
 np.random.seed(1234)
 dates = pd.date_range(start="2022-01-01", periods=60, freq="d")
@@ -22,6 +24,8 @@ forecast_data = fitted_model.forecast(steps=12)
 
 # Get rolling mean of forecast values over a window of 3
 smoothed_forecast = forecast_data.rolling(window=3).mean()
+
+#create a tooltip action on this dataplot
 
 # Plot training and test data, and model predictions
 fig, ax = plt.subplots(figsize=(12,6))
