@@ -1,8 +1,8 @@
 ## Subject Expertise(/Workforce_Management_Models/Workforce Management Implemetation.pdf) ##
 *sample work - Workforce Management Implementation Project Plan and Scoping
-![Step 1](/Workforce_Management_Models/Images/MithunP_WFMimplementation.001.png)
+![Step 1](Images/MithunP_WFMimplementation.001.png)
 *sample work - Workforce Management: Swimlane diagram of future state of an excel based innovation
-![Step 2](/Workforce_Management_Models/Images/MithunP_WFMimplementation.010.png)
+![Step 2](Workforce_Management_Models/Images/MithunP_WFMimplementation.010.png)
 *sample work - Workforce Management: value diagram of process savings
 ![Step 3](/Workforce_Management_Models/Images/MithunP_WFMimplementation.011.png)
 *sample work - Workforce Management: service-oriented architecture
