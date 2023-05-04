@@ -7,9 +7,8 @@
 ![Step 3](Images/MithunP_WFMimplementation.011.png)
 *sample work - Workforce Management: service-oriented architecture
 ![Step 4](Images/MithunP_WFMimplementation.019.png)
-*sample work - UML diagram: process evaluation
+*sample work - UML diagram using a Swimlane: process evaluation (used an old picture - need to edit)
 ![Step 4](Images/UMLdiagram_example.png)
-
 
 
 <!-- ABOUT THE PROJECT -->
