@@ -1,3 +1,6 @@
+#build in some KBQs, to answer complexity/scoping/velocity requirements ect
+
+
 # Define the capacity of each team in story points per sprint
 team1_capacity = 25
 team2_capacity = 30
