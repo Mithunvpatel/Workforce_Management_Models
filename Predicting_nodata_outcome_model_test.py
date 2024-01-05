@@ -1,4 +1,3 @@
-
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
@@ -26,8 +25,8 @@ mse = mean_squared_error(y_test, predictions)
 print(f'Mean Squared Error: {mse}')
 
 # Visualize the results
-plt.scatter(X_test, y_test, color='black')
-plt.plot(X_test, predictions, color='blue', linewidth=3)
+plt.scatter(X_test['Hour'], y_test, color='black')
+plt.plot(X_test['Hour'], predictions, color='blue', linewidth=3)
 plt.xlabel('Number of Hours')
 plt.ylabel('Volume')
 plt.title('Predicting Volume based on Hours')
