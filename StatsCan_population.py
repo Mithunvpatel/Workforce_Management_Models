@@ -1,0 +1,144 @@
+import pandas as pd
+from io import StringIO
+import matplotlib.pyplot as plt
+
+# Your data
+data = '''Age (years) Population (counts) Males Females
+0 188215 179715
+1 192240 183365
+2 194765 184880
+3 194705 186330
+4 191225 181660
+5 186655 178090
+6 184550 175685
+7 186600 177810
+8 183030 175450
+9 185120 176900
+10 188065 178550
+11 193890 184825
+12 194185 185495
+13 199990 191445
+14 207860 196045
+15 216765 206990
+16 222445 210045
+17 223015 211045
+18 225055 214650
+19 228565 219565
+20 231895 222075
+21 230155 223145
+22 220455 213540
+23 212790 208915
+24 213485 211000
+25 217400 215615
+26 217105 217525
+27 214815 218350
+28 214685 219990
+29 213270 220835
+30 217790 224585
+31 214170 222175
+32 209350 219555
+33 207925 217620
+34 209575 220165
+35 211680 221590
+36 213485 222830
+37 208650 218990
+38 212685 220700
+39 217700 225630
+40 230545 238105
+41 227775 235615
+42 227130 235690
+43 225905 234910
+44 230365 238830
+45 246430 252535
+46 263020 271780
+47 270415 277910
+48 272555 279685
+49 266295 274505
+50 271900 280220
+51 265755 274330
+52 260440 269175
+53 259050 265925
+54 251880 260290
+55 244740 252490
+56 241480 250955
+57 230125 240365
+58 219330 229270
+59 211620 220255
+60 208070 216585
+61 202650 211655
+62 197825 207905
+63 198145 207435
+64 195995 206400
+65 163595 172180
+66 154045 162465
+67 149215 158010
+68 141760 150900
+69 129395 140150
+70 122800 135300
+71 113465 126200
+72 108745 121745
+73 102565 116000
+74 95860 110380
+75 93250 108345
+76 87175 103660
+77 82095 98815
+78 79770 98440
+79 75650 95495
+80 71025 93190
+81 64675 87680
+82 57290 81180
+83 52370 77495
+84 45725 71440
+85 40135 67395
+86 34530 61675
+87 29510 55505
+88 24435 49330
+89 20800 43700
+90 16695 37070
+91 12525 30430
+92 8280 22300
+93 6300 17755
+94 4670 14255
+95 3410 11165
+96 2525 8555
+97 1690 6015
+98 1160 4215
+99 670 2980
+100 955 4865'''
+
+# Create a DataFrame
+df = pd.read_csv(StringIO(data), delimiter='\s+')
+
+# Define bins based on age groups
+bins = [0, 71, 76, 86, 87, 100]
+
+# Define labels for each bin
+labels = [
+    "Children under the age of 18 (Starting June 2024)",
+    "Adults with a valid Disability Tax Credit certificate (Starting June 2024)",
+    "Seniors aged 65 to 69 (Starting May 2024)",
+    "Seniors aged 72 to 76 (Starting February 2024)",
+    "Seniors aged 77 to over (Starting January 2024)",
+]
+
+# Create a new column 'Application Open' with the corresponding labels
+df['Application Open'] = pd.cut(df['Age'], bins=bins, labels=labels, right=False, include_lowest=True)
+
+# Calculate the percentage distribution
+percentage_distribution = df['Application Open'].value_counts(normalize=True) * 100
+
+print(df)
+
+# Plotting the bar chart
+plt.figure(figsize=(10, 6))
+percentage_distribution.plot(kind='bar', color='skyblue')
+plt.title('Percentage Distribution of Age Groups')
+plt.xlabel('Age Groups')
+plt.ylabel('Percentage')
+plt.xticks(rotation=45, ha='right')
+
+# Display the percentages on top of the bars
+for i, value in enumerate(percentage_distribution):
+    plt.text(i, value + 1, f'{value:.2f}%', ha='center', va='bottom')
+
+plt.show()
